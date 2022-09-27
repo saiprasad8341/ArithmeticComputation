@@ -26,6 +26,6 @@ do
         array[$count]=${expression[$count]}
 done
 
-desord=($(echo ${array[@]} | tr " " "\n" | sort -nr))
+desord=($(echo ${array[@]} | tr " " "\n" | sort -r))
 
-echo "Desecending order: ${desord[@]}"
+echo "Ascending order: ${desord[@]}"
