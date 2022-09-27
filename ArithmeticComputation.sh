@@ -4,4 +4,19 @@ read -p "Enter the value of a: " a
 read -p "Enter the value of b: " b
 read -p "Enter the value of c: " c
 
-echo $(( $a % $b + $c ))
+declare -A expression
+
+p=$(( $a + $b * $c ))
+
+q=$(( $a * $b + $c ))
+
+r=`awk 'BEGIN{printf("%0.2f", '$c' + '$a' / '$b' )}'`
+
+s=$(( $a % $b + $c ))
+
+expression[1]=$p
+expression[2]=$q
+expression[3]=$r
+expression[4]=$s
+
+echo -e ${expression[@]}
