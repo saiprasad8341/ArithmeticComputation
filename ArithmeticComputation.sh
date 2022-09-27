@@ -23,8 +23,9 @@ echo ${expression[@]}
 
 for(( count=1; count<=4; count++ ))
 do
-	array[$count]=${expression[$count]}
+        array[$count]=${expression[$count]}
 done
 
-echo Array : ${array[@]}
+desord=($(echo ${array[@]} | tr " " "\n" | sort -nr))
 
+echo "Desecending order: ${desord[@]}"
