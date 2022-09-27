@@ -19,4 +19,12 @@ expression[2]=$q
 expression[3]=$r
 expression[4]=$s
 
-echo -e ${expression[@]}
+echo ${expression[@]}
+
+for(( count=1; count<=4; count++ ))
+do
+	array[$count]=${expression[$count]}
+done
+
+echo Array : ${array[@]}
+
